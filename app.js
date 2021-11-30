@@ -19,11 +19,19 @@ app.use(
 
 app.set("view engine", "ejs");
 
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "aoaoao99",
+//   database: "tiemchung",
+//   multipleStatements: true,
+// });
+
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "aoaoao99",
-  database: "tiemchung",
+  host: "103.97.125.253",
+  user: "thekhait_root",
+  password: "Aoaoao-99",
+  database: "thekhait_tiemchung",
   multipleStatements: true,
 });
 
