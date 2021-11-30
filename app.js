@@ -393,8 +393,6 @@ con.connect(function (err) {
         }
       }
     );
-
-    // response.render("statistical");
   });
 });
 
