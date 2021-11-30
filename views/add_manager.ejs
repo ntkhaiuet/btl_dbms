@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiêm chủng Covid-19</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background: linear-gradient(to right, #be93c5, #7bc6cc);">
+        <a class="navbar-brand" style="font-weight: bold;" href="index.html">
+            TIÊM CHỦNG COVID-19</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Trang chủ<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="register.html">Đăng ký tiêm</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Tra cứu</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="injection-registration.html">Kết quả đăng ký</a>
+                        <a class="dropdown-item" href="injection-certificate.html">Chứng nhận tiêm</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="cancel-registration.html">Hủy đăng ký</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="manager.html">Quản lý</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container pb-3">
+        <h2 class="container p-3 my-3">Nhập số liệu</h2>
+        <div class="container">
+            <form method="POST" action="/add_manager">
+                <div class="container d-flex ml-auto mr-auto res500">
+                    <div class="form-group col">
+                        <label for="">Tên người dùng</label>
+                        <input type="text" name="username" id="hdk-name" class="form-control"
+                            placeholder="Tên người dùng" required>
+                    </div>
+                    <div class="form-group col">
+                        <label for="">Mật khẩu</label>
+                        <input type="password" name="password" id="hdk-sdt" class="form-control" placeholder="Mật khẩu"
+                            required>
+                    </div>
+                </div>
+                <div class="container d-flex ml-auto mr-auto res500">
+                    <div class="form-group col">
+                        <label for="">Nhập lại mật khẩu</label>
+                        <input type="password" name="repassword" id="hdk-cccd" class="form-control"
+                            placeholder="Nhập lại mật khẩu" required>
+                        <span id="message"></span>
+                    </div>
+                    <div class="form-group col">
+                        <label for="">Email</label>
+                        <input type="email" name="email" id="kqdk-sdt" class="form-control" placeholder="Email"
+                            required>
+                    </div>
+                </div>
+                <div class="container" id="submit-input">
+                    <button type="submit" class="btn btn-primary">Nhập lại</button>
+                    <button type="submit" class="btn btn-primary">Xác nhận</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-basic">
+        <footer>
+            <p>© 2021 Nhóm 1: Nguyễn Thế Khải - Nguyễn Việt Hòa</p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="./assets/js/index.js"></script>
+    <script>
+        $('#hdk-sdt, #hdk-cccd').on('keyup', function () {
+            if ($('#hdk-sdt').val() == $('#hdk-cccd').val()) {
+                $('#message').html('Mật khẩu khớp').css('color', 'green');
+            } else
+                $('#message').html('Mật khẩu không khớp').css('color', 'red');
+        });
+    </script>
+</body>
+
+</html>
