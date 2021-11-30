@@ -35,8 +35,12 @@ var con = mysql.createConnection({
   multipleStatements: true,
 });
 
+
 con.connect(function (err) {
   if (err) throw err;
+  setInterval(function () {
+    con.query('SELECT 1');
+  }, 5000);
 
   app.use(express.static("client"));
 
