@@ -56,10 +56,10 @@ con.connect(function (err) {
   app.post("/register", function (request, response) {
     var inj_code;
     con.query(
-      "SELECT inject_code FROM inject WHERE inject_check = 'false' LIMIT 1;",
+      "SELECT MIN(inject_code) AS min FROM inject WHERE inject_check = 'false';",
       function (err, rows) {
         if (err) throw err;
-        inj_code = rows[0].inject_code;
+        inj_code = rows[0].min;
         var datetime = new Date();
         if (request.body.injection === "Mũi tiêm tiếp theo") {
           var injectDate;
